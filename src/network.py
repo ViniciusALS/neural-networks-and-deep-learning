@@ -14,8 +14,6 @@ class NeuralNetwork(object):
         layer is assumed to be an input layer, and by convention we
         won't set any biases for those neurons, since biases are only
         ever used in computing the outputs from later layers."""
-
-
         
         self.num_layers = len(sizes)
         self.sizes = sizes
