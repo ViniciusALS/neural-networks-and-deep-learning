@@ -3,6 +3,8 @@
 This repository is a fork from the ["Neural Networks
 and Deep Learning"](http://neuralnetworksanddeeplearning.com) book repository.
 
+The original project was made in Python 2.6 by [Michal Daniel Dobrzanski](https://github.com/MichalDanielDobrzanski). On this project I reinplement the code base using python 3 and enhance the code documentation.
+
 
 ## License
 
