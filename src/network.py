@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-class NeuralNetwork(object):
+class Network(object):
 
     def __init__(self, sizes) -> None:
         """The list ``sizes`` contains the number of neurons in the
@@ -14,7 +14,7 @@ class NeuralNetwork(object):
         layer is assumed to be an input layer, and by convention we
         won't set any biases for those neurons, since biases are only
         ever used in computing the outputs from later layers."""
-        
+
         self.num_layers = len(sizes)
         self.sizes = sizes
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
@@ -138,7 +138,7 @@ class NeuralNetwork(object):
         return self.sigmoid(z)*(1-self.sigmoid(z))
 
 
-    def sigmoid(z) -> float:
+    def sigmoid(self, z) -> float:
         """The sigmoid function."""
         return 1.0/(1.0+np.exp(-z))
 

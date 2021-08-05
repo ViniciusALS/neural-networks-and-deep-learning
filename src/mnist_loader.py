@@ -12,6 +12,7 @@ function usually called by our neural network code.
 # Standard library
 import pickle
 import gzip
+import os
 
 # Third-party libraries
 import numpy as np
@@ -35,10 +36,11 @@ def load_data():
     That's done in the wrapper function ``load_data_wrapper()``, see
     below.
     """
-    f = gzip.open('mnist.pkl.gz', 'rb')
+    f = gzip.open('data/mnist.pkl.gz', 'rb')
     training_data, validation_data, test_data = pickle.load(f, encoding="latin1")
     f.close()
     return (training_data, validation_data, test_data)
+
 
 def load_data_wrapper():
     """Return a tuple containing ``(training_data, validation_data,
@@ -58,6 +60,7 @@ def load_data_wrapper():
     the training data and the validation / test data.  These formats
     turn out to be the most convenient for use in our neural network
     code."""
+    load_data()
     tr_d, va_d, te_d = load_data()
     training_inputs = [np.reshape(x, (784, 1)) for x in tr_d[0]]
     training_results = [vectorized_result(y) for y in tr_d[1]]
